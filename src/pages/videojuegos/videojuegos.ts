@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HttpClient } from '@angular/common/http';
 import { MostrarVideojuegoPage } from '../mostrar-videojuego/mostrar-videojuego';
+import { SearchPage } from '../search/search';
+import { FavoritosPage } from '../favoritos/favoritos';
 
 /**
  * Generated class for the VideojuegosPage page.
@@ -18,6 +20,8 @@ import { MostrarVideojuegoPage } from '../mostrar-videojuego/mostrar-videojuego'
 export class VideojuegosPage {
 videojuegos = [];
 mostrarVideojuego = MostrarVideojuegoPage;
+search = SearchPage;
+fav = FavoritosPage;
 
   constructor(public navCtrl: NavController, 
     public navParams: NavParams, public http: HttpClient) {
@@ -38,6 +42,14 @@ mostrarVideojuego = MostrarVideojuegoPage;
 
   verVideojuego(videojuego) {
     this.navCtrl.push(this.mostrarVideojuego, {videojuego: videojuego});
+  }
+
+  buscar() {
+    this.navCtrl.push(this.search, {mascotas: this.videojuegos});
+  }
+
+  favoritos() {
+    this.navCtrl.push(this.fav, {mascotas: this.videojuegos});
   }
 
 }

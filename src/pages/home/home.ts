@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { MascotapagePage } from '../mascotapage/mascotapage';
 import { SearchPage } from '../search/search';
 import { FavProvider } from '../../providers/fav/fav';
+import { FavoritosPage } from '../favoritos/favoritos';
 
 @Component({
   selector: 'page-home',
@@ -13,7 +14,7 @@ export class HomePage {
 mascotas =[];
 mascotapage = MascotapagePage;
 search = SearchPage;
-fav = FavProvider;
+fav = FavoritosPage;
 favoritos = [];
 
   constructor(public navCtrl: NavController,
@@ -39,7 +40,7 @@ buscar() {
 }
 
 favs() {
-  this.navCtrl.push(this.fav, {favoritos = favoritos})
+  this.navCtrl.push(this.fav, {mascotas: this.mascotas});
 }
 
 }

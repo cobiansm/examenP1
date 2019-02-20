@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HttpClient } from '@angular/common/http';
 import { VerEmpleoPage } from '../ver-empleo/ver-empleo';
+import { SearchPage } from '../search/search';
+import { FavoritosPage } from '../favoritos/favoritos';
 
 /**
  * Generated class for the EmpleoPage page.
@@ -19,6 +21,8 @@ export class EmpleoPage {
   empleos = [];
   empleopage = EmpleoPage;
   verempleo = VerEmpleoPage;
+  search = SearchPage;
+  fav = FavoritosPage;
 
   constructor(public navCtrl: NavController, 
     public navParams: NavParams, public http: HttpClient) {
@@ -43,7 +47,14 @@ export class EmpleoPage {
   verEmpleo(empleo) {
     this.navCtrl.push(this.verempleo, {empleo: empleo})
   }
+
+  buscar() {
+    this.navCtrl.push(this.search, {mascotas: this.empleos});
+  }
   
+  favoritos() {
+    this.navCtrl.push(this.fav, {mascotas: this.empleos});
+  }
 
 }
 

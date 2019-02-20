@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { FavProvider } from '../../providers/fav/fav';
 
 /**
  * Generated class for the MostrarVideojuegoPage page.
@@ -17,7 +18,7 @@ export class MostrarVideojuegoPage {
 videojuego = {};
 imgs = [];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public fav: FavProvider) {
     this.videojuego = this.navParams.get('videojuego');
     if (this.videojuego.ad.hasOwnProperty('images')) {
       this.imgs = this.videojuego.ad.images;
@@ -26,6 +27,10 @@ imgs = [];
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MostrarVideojuegoPage');
+  }
+
+  favoritos(mascota) {
+    this.fav.addFavoritos(mascota);
   }
 
 }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { FavProvider } from '../../providers/fav/fav';
 
 /**
  * Generated class for the VerEmpleoPage page.
@@ -16,7 +17,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class VerEmpleoPage {
 empleo = {};
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public fav: FavProvider) {
     this.empleo = this.navParams.get('empleo');
     if (this.empleo.ad.hasOwnProperty('images')) {
       this.imgs = this.empleo.ad.images;
@@ -25,6 +27,10 @@ empleo = {};
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad VerEmpleoPage');
+  }
+  
+  favoritos(mascota) {
+    this.fav.addFavoritos(mascota);
   }
 
 }

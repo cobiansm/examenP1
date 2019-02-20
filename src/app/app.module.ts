@@ -15,6 +15,7 @@ import { VerEmpleoPage } from '../pages/ver-empleo/ver-empleo';
 import { MostrarVideojuegoPage } from '../pages/mostrar-videojuego/mostrar-videojuego';
 import { SearchPage } from '../pages/search/search';
 import { FavProvider } from '../providers/fav/fav';
+import { FavoritosPage } from '../pages/favoritos/favoritos';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { FavProvider } from '../providers/fav/fav';
     TabsPage,
     VerEmpleoPage,
     MostrarVideojuegoPage,
-    SearchPage
+    SearchPage,
+    FavoritosPage
   ],
   imports: [
     BrowserModule,
@@ -43,7 +45,8 @@ import { FavProvider } from '../providers/fav/fav';
     TabsPage,
     VerEmpleoPage,
     MostrarVideojuegoPage,
-    SearchPage
+    SearchPage,
+    FavoritosPage
   ],
   providers: [
     StatusBar,

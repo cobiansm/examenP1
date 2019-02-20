@@ -24,7 +24,9 @@
       <p *ngIf="videojuego.ad.hasOwnProperty('locations')">
         Ubicación: {{videojuego.ad.locations[0].locations[0].locations[0].label}}, {{videojuego.ad.locations[0].label}}
       </p>
-      <ion-icon  name='heart' item-end (click)='favoritos(videojuego)'></ion-icon>
+      <!-- <ion-icon  name='heart' item-end (click)='favoritos(videojuego)'></ion-icon> -->
+      <ion-icon *ngIf = "!fav.existe(mascota)" name='heart' item-end (click)='favoritos(mascota)'></ion-icon>
+      <ion-icon *ngIf = "fav.existe(mascota)" name='heart' color = 'danger' (click)='fav.remove(mascota)' item-end></ion-icon>
     </ion-item>
     <ion-item>
     <h2 *ngIf="videojuego.ad.hasOwnProperty('list_price')">
