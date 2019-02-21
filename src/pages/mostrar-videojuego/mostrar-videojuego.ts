@@ -29,8 +29,8 @@ imgs = [];
     console.log('ionViewDidLoad MostrarVideojuegoPage');
   }
 
-  favoritos(mascota) {
-    this.fav.addFavoritos(mascota);
+  favoritos(videojuego) {
+    this.fav.addFavoritos(videojuego);
   }
 
 }

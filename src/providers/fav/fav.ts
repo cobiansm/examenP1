@@ -24,7 +24,7 @@ favoritos = [];
     if (index > -1) {
       this.favoritos.splice(index, 1);
       const toast = this.toastCtrl.create({
-        message: 'Mascota eliminada de favoritos',
+        message: 'Se ha eliminado de favoritos',
         duration: 3000,
         position: 'top'
       });
@@ -43,7 +43,7 @@ favoritos = [];
     this.favoritos.push(mascota);
 
     const toast = this.toastCtrl.create({
-      message: 'Esta mascota se agregó a favoritos',
+      message: 'Se ha agregado a favoritos',
       duration: 3000,
       position: 'top'
     });

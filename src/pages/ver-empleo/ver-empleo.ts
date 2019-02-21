@@ -29,8 +29,8 @@ empleo = {};
     console.log('ionViewDidLoad VerEmpleoPage');
   }
   
-  favoritos(mascota) {
-    this.fav.addFavoritos(mascota);
+  favoritos(empleo) {
+    this.fav.addFavoritos(empleo);
   }
 
 }
